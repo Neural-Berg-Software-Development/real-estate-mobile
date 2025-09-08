@@ -1,4 +1,5 @@
 import * as Linking from "expo-linking";
+import * as WebBrowser from "expo-web-browser";
 import { Account, Avatars, Client, OAuthProvider } from "react-native-appwrite";
 
 export const config = {
@@ -20,7 +21,6 @@ export const account = new Account(client);
 export async function login() {
   try {
     const redirectUri = Linking.createURL("/");
-
     const response = await account.createOAuth2Token(
       OAuthProvider.Google,
       redirectUri
@@ -28,7 +28,7 @@ export async function login() {
 
     if (!response) throw new Error("Failed to login");
 
-    const browserResult = await openAuthSessionAsync(
+    const browserResult = await WebBrowser.openAuthSessionAsync(
       response.toString(),
       redirectUri
     );
@@ -63,7 +63,7 @@ export async function logout() {
   }
 }
 
-export async function getUser() {
+export async function getCurrentUser() {
   try {
     const response = await account.get();
 
