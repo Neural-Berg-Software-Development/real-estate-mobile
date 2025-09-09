@@ -1,10 +1,12 @@
+import GlobalProvider from "@/lib/global-provider";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "./global.css";
 
-import GlobalProvider from "@/lib/global-provider";
-import * as SplashScreen from "expo-splash-screen";
+// Prevent the splash screen from auto-hiding
+SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
@@ -23,7 +25,7 @@ export default function RootLayout() {
   }, [fontsLoaded]);
 
   if (!fontsLoaded) {
-    return null;
+    return null; // Keep showing splash screen while fonts load
   }
 
   return (
