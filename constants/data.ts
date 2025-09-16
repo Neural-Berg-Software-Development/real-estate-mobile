@@ -1,6 +1,18 @@
+/**
+ * Data Constants - Static data arrays and objects used throughout the application
+ * Contains mock data for properties, settings, categories, and other app content
+ * In a production app, this data would typically come from an API or database
+ */
+
+// Import constants for icons and images
 import icons from "./icons";
 import images from "./images";
 
+/**
+ * Regular property cards data - Mock data for property listings
+ * Used for displaying standard property cards in lists and grids
+ * Each card contains essential property information
+ */
 export const cards = [
   {
     title: "Card 1",
@@ -36,6 +48,11 @@ export const cards = [
   },
 ];
 
+/**
+ * Featured property cards data - Mock data for highlighted/premium listings
+ * Used for carousel display on the home screen
+ * Contains similar structure to regular cards but for special properties
+ */
 export const featuredCards = [
   {
     title: "Featured 1",
@@ -55,6 +72,11 @@ export const featuredCards = [
   },
 ];
 
+/**
+ * Property categories data - Filter options for property types
+ * Used in search and filtering functionality
+ * Includes "All" category for showing unfiltered results
+ */
 export const categories = [
   { title: "All", category: "All" },
   { title: "Houses", category: "House" },
@@ -67,6 +89,12 @@ export const categories = [
   { title: "Others", category: "Others" },
 ];
 
+/**
+ * Settings menu data - Configuration options for user profile screen
+ * Each item includes title and corresponding icon
+ * Used to render settings menu items in the profile screen
+ * First two items (Bookings, Payments) are treated specially in the UI
+ */
 export const settings = [
   {
     title: "My Bookings",
@@ -102,6 +130,12 @@ export const settings = [
   },
 ];
 
+/**
+ * Property facilities/amenities data - Available amenities for properties
+ * Used to display what facilities are available at a property
+ * Each facility includes title and representative icon
+ * Can be used for filtering properties by available amenities
+ */
 export const facilities = [
   {
     title: "Laundry",
@@ -137,6 +171,12 @@ export const facilities = [
   },
 ];
 
+/**
+ * Property gallery data - Image gallery for property detail pages
+ * Used to display multiple photos of a property in a gallery view
+ * Each item has unique id and image reference
+ * Currently uses mock images - in production would contain actual property photos
+ */
 export const gallery = [
   {
     id: 1,
